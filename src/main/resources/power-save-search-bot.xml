@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://pwrstapp01/power/webservices/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:saved_search_bot soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <searchName xsi:type="xsd:string"> </searchName>
+         <format xsi:type="xsd:string">FULL</format>
+         <archive xsi:type="xsd:boolean">false</archive>
+      </web:saved_search_bot>
+   </soapenv:Body>
+</soapenv:Envelope>

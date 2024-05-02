@@ -1,0 +1,17 @@
+{
+    "resourcePackages": [
+        "net.abcbs.eae.jaxrs"
+    ],
+    "prettyPrint" : true,
+    "cacheTTL": 0,
+    "openAPI": {
+        "info": {
+            "version": "1.0",
+            "title": "RPAQueryProcessorService",
+            "description": "A RESTful web service that allows the EAE team to automate and run SQL queries.",
+            "contact": {
+                "email": "EnterpriseAutomationEngineeringTeam@arkbluecross.com"
+            }
+        }
+    }
+}

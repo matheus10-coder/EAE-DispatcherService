@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://abcbspower/power/webservices/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:put_record_bot soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <rec_ID xsi:type="xsd:string"></rec_ID>
+         <queue xsi:type="xsd:string"></queue>
+         <comment xsi:type="xsd:string"></comment>
+      </web:put_record_bot>
+   </soapenv:Body>
+</soapenv:Envelope>

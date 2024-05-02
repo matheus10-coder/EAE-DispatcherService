@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>RPADispatcherService</display-name>
+
+	<!-- Swagger servlet -->
+	<servlet>
+		<servlet-name>OpenApi</servlet-name>
+		<servlet-class>io.swagger.v3.jaxrs2.integration.OpenApiServlet</servlet-class>
+
+		<init-param>
+			<param-name>openApi.configuration.resourcePackages</param-name>
+			<param-value>net.abcbs.eae.jaxrs</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>openApi.configuration.location</param-name>
+			<param-value>/openapi-configuration.json</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OpenApi</servlet-name>
+		<url-pattern>/openapi/*</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Security constraint for REST resource -->
+	<security-constraint id="SecurityConstraint_1">
+
+		<web-resource-collection id="WebResourceCollection_1">
+			<web-resource-name>RPADispatcherService</web-resource-name>
+			<description>Protection area for REST resource</description>
+			<url-pattern>/resources/Dispatcher</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+
+		<auth-constraint id="AuthConstraint_1">
+			<role-name>AuthenticatedUsers</role-name>
+		</auth-constraint>
+
+		<user-data-constraint id="UserDataConstraint_1">
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+
+	</security-constraint>
+
+	<security-constraint id="SecurityConstraint_2">
+
+		<web-resource-collection id="WebResourceCollection_2">
+			<web-resource-name>RPADispatcherService</web-resource-name>
+			<description>Protection area for REST resource /resources/Dispatcher/*</description>
+			<url-pattern>/resources/Dispatcher/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+		</web-resource-collection>
+
+		<auth-constraint id="AuthConstraint_2">
+			<role-name>AuthenticatedUsers</role-name>
+		</auth-constraint>
+
+		<user-data-constraint id="UserDataConstraint_2">
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+
+	</security-constraint>
+
+	<security-role>
+		<role-name>AuthenticatedUsers</role-name>
+	</security-role>
+</web-app>
